@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz1</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body dir="rtl">
+    <div class="container">
+      <header>
+        <h1>لوحة المهام الدراسية</h1>
+        <p id="window-size" style="margin:20px 0px"></p>
+      </header>
+      <section>
+        <div class="add-task">
+          <h2>إضافة مهمة</h2>
+          <form action="">
+            <label for="">العنوان</label><br />
+            <input type="text" placeholder="عنوان المهمة"  id="title-task"/><br />
+            <label for="">الوصف</label><br />
+            <textarea placeholder="وصف المهمة" id="desc-task"></textarea>
+            <label for="">الاولولية</label>
+            <select name="" id="priority-task">
+              <option selected value="mid">متوسط</option>
+              <option value="low">منخفض</option>
+              <option value="high">مرتفع</option></select
+            ><br />
+            <label for="">تاريخ الاستحقاق</label>
+            <input type="date" id="date-task"/><br />
+            <label for="">المادة</label>
+            <input type="text" placeholder="المادة" id="material-task" /><br />
+            <p id="error-message">عنوان المهمة مطلوب ويجب أن لا يقل عن 3 أحرف.</p>
+            <button type="button" id="btn-add">اضافة</button>
+          </form>
+        </div>
+        <div class="tools" id="tool">
+          <h1>الأدوات</h1>
+          <div class="slide">
+            <input type="text" onkeyup="searchTasks()" id="search-task" placeholder="بحث..." />
+            <select id="status-filter">
+              <option value="all">الكل</option>
+              <option value="pending">قيد التنفيذ</option>
+              <option value="completed">مكتمل</option>
+            </select>
+            <select id="priority-filter">
+              <option value="all">كل الاولوليات</option>
+              <option value="high">مرتفع</option>
+              <option value="mid">متوسط</option>
+              <option value="low">منخفض</option>
+            </select>
+            <select id="sort-filter">
+              <option value="created">ترتيب حسب وقت الانشاء</option>
+              <option value="date">ترتيب حسب تاريخ الاستحقاق</option>
+            </select>
+          </div>
+          <div id="all-task"></div>
+        </div>
+      </section>
+      <section>
+        <div class="menu-task">
+          <h2>قائمة المهام</h2>
+          <div id="tasks">
+            <p id="message">لاتوجد نتائج مطابقة</p>
+           
+          </div>    
+        </div>
+      </section>
+      <section>
+        <div class="menu-task">
+          <h2>معلومات تقنية</h2>
+          <p id="url" style="margin: 20px 0px;"></p>
+      </section>
+    </div>
+  </body>
+  <script src="js/main.js"></script>
+</html>
